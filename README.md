@@ -8,8 +8,9 @@ provided in the project.
 
 ## How to run
 Using Linux terminal is suggested unless a modified way of compiling
-is desired. Run the makefile in the terminal to compile and run the
-executable file created in the directory bin.
+is desired. First, run "make" in the terminal to compile and run the
+executable file created in the directory bin. To clean the files, run
+"make clean".
 
 ## Status
 - It created data on a hard-disk and read them to plot (suitable for
