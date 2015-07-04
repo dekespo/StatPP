@@ -1,5 +1,5 @@
 # Statistics in C++
-A small project how a statistical calculations can be done in C++ with
+A small project how statistical calculations can be done in C++ with
 the help of some C++ open source libraries. All the libraries are
 provided in the project.
 
