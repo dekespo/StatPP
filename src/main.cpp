@@ -69,6 +69,8 @@ int main()
 				DataGroup obj(n, data);
 
 				obj.showData(); 
+
+				obj.saveDataSQL(); // Fixation is needed
 				
 				obj.plotData(); // Plot with gnuplot
 				break;

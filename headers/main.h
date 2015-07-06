@@ -27,6 +27,9 @@ void manual();
 void automatic();
 // random_generator.cpp 
 dVec generateRandoms( uint, double , double);
+// SQLite.cpp 
+void SQLite();
+int callback(void *, int, char **, char **);//static 
 
 // Class for statistical calculations; should be inherited
 class StatisticalMethods
@@ -58,4 +61,5 @@ class DataGroup : protected StatisticalMethods
 		~DataGroup(); 
 		void showData();
 		void plotData();
+		void saveDataSQL();
 };

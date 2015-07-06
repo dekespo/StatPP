@@ -65,3 +65,8 @@ void DataGroup::plotData()
 
 	deleteData();
 }
+
+void DataGroup::saveDataSQL()
+{
+	SQLite();
+}
