@@ -1,4 +1,4 @@
-#include "main.h"
+#include "general.h"
 #include "gnuplot-iostream.h" // can be downloaded from www.stahlke.org/dan/gnuplot-iostream
 
 // Here, gnuplot is used, there are automatic and manual part, in the

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "statistical_methods.h"
 
 // Sort data
 void StatisticalMethods::sortData(dVec *data)

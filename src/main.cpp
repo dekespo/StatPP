@@ -1,4 +1,6 @@
-#include "main.h" // Include the defined structure
+#include "general.h" 
+#include "statistical_methods.h"
+#include "data_group.h"
 
 int main()
 {
@@ -70,12 +72,20 @@ int main()
 
 				obj.showData(); 
 
-				obj.saveDataSQL(); // Fixation is needed
-				
 				obj.plotData(); // Plot with gnuplot
 				break;
 			}
-			case 3: // Exit
+			case 3: // SQLite Demo (will change in future)
+			{
+				n = 5; // Default
+				for(uint i = 0; i < n; i++)
+					data.push_back(i);
+				DataGroup obj(n, data);
+
+				obj.saveDataSQL(); // Fixation is needed
+				break;
+			}
+			case 4: // Exit
 			{
 				programRunCheck = false;
 				break;

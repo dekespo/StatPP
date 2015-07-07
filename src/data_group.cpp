@@ -1,6 +1,4 @@
-#include "main.h"
-#include <cstdio>
-#include <fstream>
+#include <data_group.h>
 
 DataGroup::DataGroup(uint n, dVec d)
 {

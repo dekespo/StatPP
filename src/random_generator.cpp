@@ -1,4 +1,4 @@
-#include "main.h"
+#include "general.h"
 
 /* main.cpp */
 dVec generateRandoms(uint N, double x1, double x2)

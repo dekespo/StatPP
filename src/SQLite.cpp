@@ -1,5 +1,8 @@
-#include "main.h"
+#include "general.h"
 #include <sqlite3.h> 
+
+/*Here, SQLite with C/C++ API is used, current it is a demo using  
+ a given database in the directory databases*/
 
 void SQLite()
 {

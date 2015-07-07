@@ -1,4 +1,4 @@
-#include "main.h"
+#include "general.h"
 
 /* main.cpp */
 void starting()
@@ -20,7 +20,8 @@ int instructions()
 	std::cout << "Options are:" << std::endl;
 	std::cout << "1) Enter a number of data" << std::endl;
 	std::cout << "2) Create a number of data" << std::endl;
-	std::cout << "3) Shut down the program" << std::endl;
+	std::cout << "3) SQLite Demo" << std::endl;
+	std::cout << "4) Shut down the program" << std::endl;
 	int value;
 	std::cin >> value;
 	if (!std::cin)
@@ -34,7 +35,7 @@ int instructions()
 }
 /* main.cpp */
 
-/* data_group.cpp */
+/* plotGNU.cpp */
 int GNUchoose()
 {
 	std::cout << "How would you like to use the plot?" << std::endl;
@@ -53,4 +54,4 @@ int GNUchoose()
 	else
 		return value;
 }
-/* data_group.cpp */
+/* plotGNU.cpp */
