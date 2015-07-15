@@ -1,6 +1,7 @@
 #include "general.h" 
 #include "statistical_methods.h"
 #include "data_group.h"
+#include "random_generator.h"
 
 int main()
 {
@@ -88,6 +89,18 @@ int main()
 			case 4: // Exit
 			{
 				programRunCheck = false;
+				break;
+			}
+			case 5: // RandomGenerator
+			{
+				dist_names name = randomGeneratorInstructions();
+				RandomGenerator obj(name);
+				dVec data = obj.getData();
+
+				std::cout << "TESTING RANDOM GENERATOR" << std::endl;
+				for(dVecIt it = data.begin(); it != data.end(); it++)
+					std::cout << *it << std::endl;
+
 				break;
 			}
 			default: // False enter

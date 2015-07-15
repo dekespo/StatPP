@@ -9,17 +9,21 @@ LDFLAGS = -lboost_iostreams -lboost_system -lboost_filesystem -lm -lsqlite3
 ODIR = obj
 # source file
 SDIR = src
+# Select all cpp files in the soruce file
+CPP_FILES = $(wildcard $(SDIR)/*.cpp)
 
-OBJ = $(addprefix $(ODIR)/, SQLite.o plotGNU.o data_group.o text.o statistical_methods.o random_generator.o main.o) #expected object files
+# expected object files from each cpp file in the source file
+OBJ = $(addprefix $(ODIR)/, $(notdir $(CPP_FILES:.cpp=.o)))
 
-#creating object files
+# creating object files
 $(ODIR)/%.o: $(SDIR)/%.cpp
 	$(CC) -c $< $(CFLAGS)  -o $@
 
-#creating the executable file
+# creating the executable file
 bin/stat : $(OBJ)
 	$(CC) $(OBJ) -o bin/stat $(LDFLAGS)
 
+# cleaning object files and the executable file
 .PHONY: clean
 clean:
 	rm -f $(ODIR)/*.o $(OUT) bin/*
