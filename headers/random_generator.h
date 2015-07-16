@@ -4,19 +4,23 @@
 #include "general.h"
 #include <random> //C++11
 
+// Enumeration for distribution names (non-discrete)
 enum dist_names
 {
-	BINOMIAL,
+	CHI_SQUARED,
+	EXPONENTIAL,
+	GAMMA,
 	NORMAL,
-	POISSON,
 	STUDENT_T,
-	WEIBULL,
-	UNIFORM_INT,
-	UNIFORM_REAL
+	UNIFORM_REAL,
+	WEIBULL
 };
 
+// Function
 dist_names randomGeneratorInstructions();
+dist_names numberToNames(uint value);
 
+// Class
 class RandomGenerator
 {
 	private:
@@ -24,24 +28,20 @@ class RandomGenerator
 		uint N;
 		dVec data;
 		dist_names name;
-		void chooseDistribution();
+		void selectDistribution();
+		void fchi_squared();
+		void fexponential();
+		void fgamma();
+		void fnormal();
+		void fstudent_t();
 		void funiform_real();
-		//dist_names stringToDistNames(dist_names);
-		//dist_names stringToDistNames(str);
-		//dVec Normal();
-		//str name;
-		//std::normal_distribution normal;
-		//std::binomial_distribution binomial;
-		//std::poisson_distribution poisson;
-		//std::student_t_distribution student_t;
-		//std::weibull_distribution weibull;
-		//std::uniform_int_distribution uniform_int;
-		//std::uniform_real_distribution uniform_real;
+		void fweibull();
 	public:
 		RandomGenerator(dist_names);
 		//RandomGenerator(str);
 		~RandomGenerator();
 		dVec getData();
+		uint getN();
 };
 
 #endif

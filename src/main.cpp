@@ -96,7 +96,12 @@ int main()
 				dist_names name = randomGeneratorInstructions();
 				RandomGenerator obj(name);
 				dVec data = obj.getData();
+				uint n = obj.getN();
 
+				DataGroup obj2(n, data);
+
+				obj2.plotData(); // Plot with gnuplot
+				
 				std::cout << "TESTING RANDOM GENERATOR" << std::endl;
 				for(dVecIt it = data.begin(); it != data.end(); it++)
 					std::cout << *it << std::endl;
