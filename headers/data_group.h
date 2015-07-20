@@ -25,6 +25,7 @@ class DataGroup : protected StatisticalMethods
 		void showData();
 		void plotData();
 		void saveDataSQL();
+		void sortData();
 };
 
 #endif

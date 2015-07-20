@@ -19,10 +19,10 @@ int instructions()
 	std::cout << "What would you like to do?" << std::endl;
 	std::cout << "Options are:" << std::endl;
 	std::cout << "1) Enter a number of data" << std::endl;
-	std::cout << "2) Create a number of data" << std::endl;
+	std::cout << "2) Create random data from distributions" << std::endl;
 	std::cout << "3) SQLite Demo" << std::endl;
 	std::cout << "4) Shut down the program" << std::endl;
-	std::cout << "5) TEST PROGRAM" << std::endl;
+	//std::cout << "5) TEST PROGRAM" << std::endl;
 	int value;
 	std::cin >> value;
 	if (!std::cin)

@@ -4,7 +4,6 @@ DataGroup::DataGroup(uint n, dVec d)
 {
 	size = n;
 	data = d;
-	sortData(&data);
 	sum = calculateSum(data);
 	mean = calculateMean(size, sum);
 	median = calculateMedian(size, data);
@@ -64,7 +63,6 @@ void DataGroup::plotData()
 	deleteData();
 }
 
-void DataGroup::saveDataSQL()
-{
-	SQLite();
-}
+void DataGroup::saveDataSQL() {	SQLite();}
+
+void DataGroup::sortData() { StatisticalMethods::sortData(data);}

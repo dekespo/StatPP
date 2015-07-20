@@ -13,7 +13,8 @@ enum dist_names
 	NORMAL,
 	STUDENT_T,
 	UNIFORM_REAL,
-	WEIBULL
+	WEIBULL,
+	CANCEL
 };
 
 // Function

@@ -1,17 +1,4 @@
 #include "random_generator.h"
-//#include "general.h"
-
-/* main.cpp */
-dVec generateRandoms(uint N, double x1, double x2)
-{
-	dVec data;
-	
-	for(uint i = 0; i < N; i++)
-		data.push_back( (double)rand() / RAND_MAX * (x2 - x1) + x1 );
-
-	return data;
-}
-/* main.cpp */
 
 RandomGenerator::RandomGenerator(dist_names _name)
 {
@@ -19,7 +6,6 @@ RandomGenerator::RandomGenerator(dist_names _name)
 	std::cin >> N;
 	name = _name;
 	selectDistribution();
-	//name = stringToDistNames(sname); 
 }
 
 RandomGenerator::~RandomGenerator(){}
@@ -116,7 +102,6 @@ void RandomGenerator::fnormal()
 	
 	for(uint i = 0; i < N; i++)
 		data.push_back(distribution(generator));
-
 }
 
 void RandomGenerator::fstudent_t()
@@ -155,14 +140,7 @@ void RandomGenerator::fweibull()
 	
 	for(uint i = 0; i < N; i++)
 		data.push_back(distribution(generator));
-
 }
-
-//dist_names RandomGenerator::stringToDistNames(str sname)
-//{
-//	if(sname.compare("uniform_real") == 0)
-//		return UNIFORM_REAL;
-//}
 
 dVec RandomGenerator::getData(){ return data; }
 
@@ -170,7 +148,6 @@ uint RandomGenerator::getN(){ return N; }
 
 dist_names randomGeneratorInstructions()
 {
-
 	while(true)
 	{
 		std::cout << "Which distriubtion would you like to use?" << std::endl;
@@ -193,10 +170,10 @@ dist_names randomGeneratorInstructions()
 		}
 		else
 		{
-			if(value > 0 && value < 8)
+			if(value > 0 && value <= 8)
 				return numberToNames(value);
-			else if(value == 8)
-				break;
+			//else if(value == 8)
+			//	break;
 			else
 				std::cout << "Wrong number is entered, please try again." << std::endl;
 		}
@@ -216,7 +193,7 @@ dist_names numberToNames(uint value)
 		case 5: { chosen = STUDENT_T; break;}
 		case 6: { chosen = UNIFORM_REAL; break;}
 		case 7: { chosen = WEIBULL; break;}
-		//default:
+		default: {chosen = CANCEL;}
 	}
 	return chosen;
 }

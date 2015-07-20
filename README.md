@@ -23,9 +23,10 @@ executable file created in the directory bin. To clean the files, run
 - It created data on a hard-disk and read them to plot (suitable for
   large datasets, but slow), then delete the data. It is likely to
   change in future.
-- A file that provides certain distributions will be provided
 - There is no GUI, it might be added in the future.
 - SQLite is shown as a demo, it will be improved and be user-friendly
+- Database location problem
+- Templates will be added
 
 ## Database
 - test.db is provided by using the file in the following link:

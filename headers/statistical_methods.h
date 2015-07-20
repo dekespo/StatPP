@@ -8,7 +8,7 @@
 class StatisticalMethods
 {
 	protected:
-		void sortData(dVec *);
+		void sortData(dVec &);
 		double calculateSum(dVec);
 		double calculateMean(uint , double );
 		double calculateMedian(uint , dVec);

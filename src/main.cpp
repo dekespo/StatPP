@@ -19,7 +19,6 @@ int main()
 		int init = instructions(); //text.cpp
 		uint n;
 		dVec data;
-		double x1, x2;
 
 		switch(init)
 		{
@@ -32,6 +31,7 @@ int main()
 				while(dataCheck)
 				{
 					std::cout << "Please enter the data " << i+1 << " = ";
+					double x1;
 					std::cin >> x1;
 					if (!std::cin)
 					{
@@ -51,29 +51,21 @@ int main()
 				obj.showData();
 				break;
 			}
-			case 2: // Create data for a given range
+			case 2: // RandomGenerator
 			{
-				std::cout << "It will need the number of data and range from x1 to x2:" << std::endl;
-				std::cout << "Enter the number of data:";
-				std::cin >> n;
-				std::cout << "Enter x1:";
-				std::cin >> x1;
-				std::cout << "Enter x2:";
-				std::cin >> x2;
+				dist_names name = randomGeneratorInstructions();
+				if(name != CANCEL)
+				{
+					RandomGenerator obj(name);
+					dVec data = obj.getData();
+					uint n = obj.getN();
 
-				std::cout << "You entered: " << std::endl;
-				std::cout << "data number: " << n << std::endl;
-				std::cout << "x1: " << x1 << std::endl;
-				std::cout << "x2: " << x2 << std::endl;
-				std::cout << "Random numbers in range [" << x1 << "," << x2 << "] are being generating..." << std::endl;
+					DataGroup obj2(n, data);
 
-				data = generateRandoms(n, x1, x2);
+					obj2.plotData(); // Plot with gnuplot
 
-				DataGroup obj(n, data);
-
-				obj.showData(); 
-
-				obj.plotData(); // Plot with gnuplot
+				}
+				
 				break;
 			}
 			case 3: // SQLite Demo (will change in future)
@@ -89,23 +81,6 @@ int main()
 			case 4: // Exit
 			{
 				programRunCheck = false;
-				break;
-			}
-			case 5: // RandomGenerator
-			{
-				dist_names name = randomGeneratorInstructions();
-				RandomGenerator obj(name);
-				dVec data = obj.getData();
-				uint n = obj.getN();
-
-				DataGroup obj2(n, data);
-
-				obj2.plotData(); // Plot with gnuplot
-				
-				std::cout << "TESTING RANDOM GENERATOR" << std::endl;
-				for(dVecIt it = data.begin(); it != data.end(); it++)
-					std::cout << *it << std::endl;
-
 				break;
 			}
 			default: // False enter

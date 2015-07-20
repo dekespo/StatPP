@@ -1,9 +1,9 @@
 #include "statistical_methods.h"
 
 // Sort data
-void StatisticalMethods::sortData(dVec *data)
+void StatisticalMethods::sortData(dVec &data)
 {
-	std::sort(data->begin(), data->end());
+	std::sort(data.begin(), data.end());
 }
 
 // Sum of data
