@@ -31,8 +31,8 @@ int main()
 				while(dataCheck)
 				{
 					std::cout << "Please enter the data " << i+1 << " = ";
-					double x1;
-					std::cin >> x1;
+					double x;
+					std::cin >> x;
 					if (!std::cin)
 					{
 					//std::cout << "You entered a non-numeric value, are you sure you want to finish data?(y or n)" << std::endl;
@@ -41,7 +41,7 @@ int main()
 						dataCheck = false;
 						continue;
 					}
-					data.push_back(x1);
+					data.push_back(x);
 					i++;
 				}
 
@@ -63,9 +63,7 @@ int main()
 					DataGroup obj2(n, data);
 
 					obj2.plotData(); // Plot with gnuplot
-
 				}
-				
 				break;
 			}
 			case 3: // SQLite Demo (will change in future)
@@ -78,13 +76,10 @@ int main()
 				obj.saveDataSQL(); // Fixation is needed
 				break;
 			}
-			case 4: // Exit
-			{
-				programRunCheck = false;
-				break;
-			}
-			default: // False enter
-				std::cout << "You entered an invalid option" << std::endl;
+			// Exit
+			case 4: { programRunCheck = false; break;}
+			// False enter
+			default: std::cout << "You entered an invalid option" << std::endl;
 		}
 	}	
 

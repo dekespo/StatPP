@@ -9,23 +9,10 @@ void plotGNU()
 {
 	switch(GNUchoose())
 	{
-		case 1:
-		{
-			manual();
-			break;
-		}
-		case 2:
-		{
-			automatic();
-			break;
-		}
-		case 3:
-		{
-			// DO NOTHING
-			break;
-		}
-		default:
-			std::cout << "You entered an invalid option" << std::endl;
+		case 1:	{ manual();	break; }
+		case 2:	{ automatic(); break;}
+		case 3:	{ /* DO NOTHING */	break;}
+		default: std::cout << "You entered an invalid option" << std::endl;
 	}
 }
 /* data_group.cpp */
@@ -34,6 +21,7 @@ void plotGNU()
 void manual()
 {
 	Gnuplot gp;
+	//gp << "set terminal dumb" << std::endl; // If there is no GUI
 	str input = "";
 	while(getline(std::cin, input))
 	{
@@ -49,6 +37,7 @@ void manual()
 void automatic()
 {
 	Gnuplot gp;
+	//gp << "set terminal dumb" << std::endl; // If there is no GUI
 	gp << "plot \"data.dat\" u 1:2" << std::endl;
 	gp << "set title \"data.dat\"" << std::endl;
 	gp << "set xlabel \"x\"" << std::endl;

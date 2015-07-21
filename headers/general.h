@@ -12,6 +12,9 @@
 
 // Type Definitions
 typedef unsigned int uint;
+//template<typename T>
+//using dVec = std::vector<T>;
+//using dVecIt = std::vector<T>::iterator;
 typedef std::vector<double> dVec;
 typedef std::vector<double>::iterator dVecIt;
 typedef std::string str;
@@ -28,9 +31,6 @@ int GNUchoose();
 void plotGNU();
 void manual();
 void automatic();
-
-// random_generator.cpp 
-dVec generateRandoms( uint, double , double);
 
 // SQLite.cpp 
 void SQLite();
