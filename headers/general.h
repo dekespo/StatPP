@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include <utility> //pair
 
 // Type Definitions
 typedef unsigned int uint;
@@ -17,6 +18,7 @@ typedef unsigned int uint;
 //using dVecIt = std::vector<T>::iterator;
 typedef std::vector<double> dVec;
 typedef std::vector<double>::iterator dVecIt;
+typedef std::pair<dVec, dVec> dVec2D;
 typedef std::string str;
 
 // Function protoypes
@@ -35,5 +37,9 @@ void automatic();
 // SQLite.cpp 
 void SQLite();
 int callback(void *, int, char **, char **);
+
+//pairUp.cpp
+dVec2D pairUp(dVec, dVec);
+void pairPlot(dVec2D);
 
 #endif

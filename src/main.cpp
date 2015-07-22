@@ -80,6 +80,29 @@ int main()
 			case 4: { programRunCheck = false; break;}
 			// False enter
 			default: std::cout << "You entered an invalid option" << std::endl;
+			case 5:
+			{
+				dist_names name = randomGeneratorInstructions();
+				RandomGenerator obj(name);
+				dVec data1 = obj.getData();
+				uint n1 = obj.getN();
+
+				//DataGroup x(n1, data1);
+
+				dist_names name2 = randomGeneratorInstructions();
+				RandomGenerator obj2(name2);
+				dVec data2 = obj2.getData();
+				uint n2 = obj2.getN();
+
+				if(n1 == n2)
+				{
+					dVec2D data2D = pairUp(data1, data2);
+					//pairPlot(dVec2D);
+					//data2D.plotData();
+				}
+				else
+					std::cout << "n1 is not equal to n2!";
+			}
 		}
 	}	
 

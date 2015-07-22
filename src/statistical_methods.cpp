@@ -1,10 +1,7 @@
 #include "statistical_methods.h"
 
 // Sort data
-void StatisticalMethods::sortData(dVec &data)
-{
-	std::sort(data.begin(), data.end());
-}
+void StatisticalMethods::sortData(dVec &data) {	std::sort(data.begin(), data.end()); }
 
 // Sum of data
 double StatisticalMethods::calculateSum(dVec data)
@@ -16,10 +13,7 @@ double StatisticalMethods::calculateSum(dVec data)
 }
 
 // Mean of data
-double StatisticalMethods::calculateMean(uint N, double sum)
-{
-	return sum / N;
-}
+double StatisticalMethods::calculateMean(uint N, double sum) { return sum / N; }
 
 // Median of data
 double StatisticalMethods::calculateMedian(uint N, dVec data)
@@ -46,7 +40,4 @@ double StatisticalMethods::calculateVariance(uint N, dVec data, double mean)
 }
 
 // Standard Deviation of data
-double StatisticalMethods::calculateSD(double variance)
-{
-	return sqrt(variance);
-}
+double StatisticalMethods::calculateSD(double variance) { return sqrt(variance); }
