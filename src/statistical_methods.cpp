@@ -7,7 +7,7 @@ void StatisticalMethods::sortData(dVec &data) {	std::sort(data.begin(), data.end
 double StatisticalMethods::calculateSum(dVec data)
 {
 	double sum = 0;
-	for(dVecIt it = data.begin(); it != data.end(); ++it)
+	for(dVec::iterator it = data.begin(); it != data.end(); ++it)
 		sum += *it;
 	return sum;
 }
@@ -30,7 +30,7 @@ double StatisticalMethods::calculateVariance(uint N, dVec data, double mean)
 {
 	dVec varData;
 	double temp;
-	for(dVecIt it = data.begin(); it != data.end(); ++it)
+	for(dVec::iterator it = data.begin(); it != data.end(); ++it)
 	{
 		temp = (*it - mean) * (*it - mean);
 		varData.push_back(temp);

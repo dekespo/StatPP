@@ -43,11 +43,9 @@ void DataGroup::showData()
 void DataGroup::saveData()
 {
 	std::fstream dataFile("data.dat",std::fstream::in | std::fstream::out | std::fstream::trunc); 
-	//for(uint i = 0; i < size; i++)
-	uint i = 0;
-	for(dVecIt it = data.begin(); it != data.end(); ++it)
+	for(uint i = 0; i < size; i++)
 	{
-		dataFile << i << " " << *it << std::endl;
+		dataFile << i << " " << data[i] << std::endl;
 		i++;
 	}
 	dataFile.close();

@@ -27,8 +27,7 @@ void manual()
 	{
 		std::cout << "Do not forget to replot " << std::endl;
 		std::cout << "Enter gnuplot input: " << std::endl;
-		if(input.compare("exit") == 0 || input.compare("quit"))
-			break;
+		if(input.compare("exit") == 0 || input.compare("quit") == 0) break;
 		gp << input << std::endl;
 	}
 }

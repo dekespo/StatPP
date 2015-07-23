@@ -15,9 +15,7 @@
 typedef unsigned int uint;
 //template<typename T>
 //using dVec = std::vector<T>;
-//using dVecIt = std::vector<T>::iterator;
 typedef std::vector<double> dVec;
-typedef std::vector<double>::iterator dVecIt;
 typedef std::pair<dVec, dVec> dVec2D;
 typedef std::string str;
 
@@ -38,8 +36,14 @@ void automatic();
 void SQLite();
 int callback(void *, int, char **, char **);
 
-//pairUp.cpp
+//pair_up.cpp
 dVec2D pairUp(dVec, dVec);
 void pairPlot(dVec2D);
+
+//case_functions.cpp
+void manualDataAdd();
+void randomGeneratorAdd();
+void SQLiteAdd();
+void testingAdd();
 
 #endif

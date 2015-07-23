@@ -22,7 +22,7 @@ int instructions()
 	std::cout << "2) Create random data from distributions" << std::endl;
 	std::cout << "3) SQLite Demo" << std::endl;
 	std::cout << "4) Shut down the program" << std::endl;
-	std::cout << "5) TEST PROGRAM" << std::endl;
+	std::cout << "9) TEST PROGRAM" << std::endl;
 	int value;
 	std::cin >> value;
 	if (!std::cin)
