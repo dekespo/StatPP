@@ -11,6 +11,13 @@ DataGroup::DataGroup(uint n, dVec d)
 	sd = calculateSD(variance);
 }
 
+DataGroup::DataGroup(uint n, dVec d1, dVec d2)
+{
+	size = n;
+	data1 = d1;
+	data2 = d2;
+}
+
 DataGroup::~DataGroup()
 {}
 
@@ -46,7 +53,6 @@ void DataGroup::saveData()
 	for(uint i = 0; i < size; i++)
 	{
 		dataFile << i << " " << data[i] << std::endl;
-		i++;
 	}
 	dataFile.close();
 }
@@ -64,6 +70,20 @@ void DataGroup::plotData()
 	plotGNU();
 
 	deleteData();
+}
+
+void DataGroup::plot2D()
+{
+	Gnuplot gp;
+	//gp << "set terminal dumb" << std::endl; // If there is no GUI
+	gp << "plot" << gp.file1d(std::make_pair(data1, data2)) << std::endl;
+	//gp << "plot \"data.dat\" u 1:2" << std::endl;
+	gp << "set title \"data.dat\"" << std::endl;
+	gp << "set xlabel \"x\"" << std::endl;
+	gp << "set ylabel \"y\"" << std::endl;
+	gp << "set grid" << std::endl;
+	gp << "replot" << std::endl;
+	gp << "exit" << std::endl;
 }
 
 void DataGroup::saveDataSQL() {	SQLite();}

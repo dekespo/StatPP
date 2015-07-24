@@ -38,7 +38,7 @@ int callback(void *, int, char **, char **);
 
 //pair_up.cpp
 dVec2D pairUp(dVec, dVec);
-void pairPlot(dVec2D);
+void pairPlot(uint, dVec2D);
 
 //case_functions.cpp
 void manualDataAdd();

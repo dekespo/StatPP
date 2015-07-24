@@ -83,8 +83,7 @@ void testingAdd()
 	if(n1 == n2)
 	{
 		dVec2D data2D = pairUp(data1, data2);
-		//pairPlot(dVec2D);
-		//data2D.plotData();
+		pairPlot(n1, data2D);
 	}
 	else
 		std::cout << "n1 is not equal to n2!";
