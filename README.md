@@ -27,6 +27,7 @@ executable file created in the directory bin. To clean the files, run
 - SQLite is shown as a demo, it will be improved and be user-friendly
 - Database location problem
 - Templates will be added
+- It is getting complex and hard to understand, a design pattern in PDF file will be added ASAP.
 
 ## Database
 - test.db is provided by using the file in the following link:
